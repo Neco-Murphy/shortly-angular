@@ -1,7 +1,12 @@
-<div id='container'>
+<div id='container' ng-controller='LinksController'>
   <!-- Your html here -->
   <h1>All Links</h1>
-  <ul>
-    <!-- <li ng-repeat="link in links">{{link}}</li> -->
-  </ul>
+  <table>
+    <tr ng-repeat="link in data.links">
+      <td><a ng-click="getLinks()">{{link.code}}</a></td>
+      <!-- HERE!!!!!!!!! NEED TO FIGURE OUT FUNCTION SO WHEN WE CLICK ON CODE, REDIRECTS US TO THE CORRECT URL -->
+      <td>{{link.url}}</td>
+    </tr> <!-- syntax is item in collection, data.links is the array in our controller -->
+
+  </table>
 </div>

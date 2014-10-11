@@ -10,6 +10,7 @@ module.exports = {
       .then(function (link) {
         if (link) {
           req.navLink = link;
+          console.log(req.navLink, "what is REQ NAV LINK!!")
           next();
         } else {
           next(new Error('Link not added yet'));
@@ -21,6 +22,7 @@ module.exports = {
   },
 
   allLinks: function (req, res, next) {
+    console.log("are you in ALL LINKS????")
   var findAll = Q.nbind(Link.find, Link);
 
   findAll({})
@@ -33,6 +35,7 @@ module.exports = {
   },
 
   newLink: function (req, res, next) {
+    console.log("ARE YOU IN NEW LINK")
     var url = req.body.url;
     console.log(req.body);
     if (!util.isValidUrl(url)) {
@@ -72,6 +75,7 @@ module.exports = {
   },
 
   navToLink: function (req, res, next) {
+    console.log('are you at navToLink: ', req.navLink)
     var link = req.navLink;
     link.visits++;
     link.save(function (err, savedLink) {

@@ -8,6 +8,7 @@ module.exports = function (app) {
   // so the real URL will be pre fetched from mongo and attached to
   // req.navLink before it reaches line 16.
   app.param('code', linksController.findUrl);
+  // console.log(linksController.findUrl, "what is find url giving")
 
   app.route('/')
     .get(linksController.allLinks)

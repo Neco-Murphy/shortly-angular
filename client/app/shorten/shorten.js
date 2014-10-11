@@ -12,7 +12,7 @@ angular.module('shortly.shorten', [])
 })
 
 .factory('PostLink', function($http){
-  var addLinkFactory = function(yourUrl){
+  var addLinkFactory = function(yourUrl){//www.example.com does not work, have to use http://
     $http.post('/api/links', {url: yourUrl}) //needs to be a JSON object
     .success(function(data) {
       console.log("Successfully posted");

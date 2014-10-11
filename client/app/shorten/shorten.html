@@ -1,10 +1,13 @@
 <div id='container'>
 <!-- Your code here -->
 <h1>Shorten your links</h1>
-<form name="shortenForm" ng-submit='addLink()'>
-  <input type='text' ng-model='link.newLink'>
+<!-- not sure how to clear the input... ng-click="link.newLink = ''"-->
+<form novalidate name="shortenForm" ng-submit='addLink()' >
+  <input type='text' name='newLink' ng-model='link.newLink'>
   <button>Shorten Url!</button>
 </form>
+
+<!-- trying to validate the url <span ng-show="shortenForm.newLink.$error.url">Not vaild web url!</span> -->
 <a href="#/links">See All Shorten Links <strong>All Links</strong> ...</a>
 </div>
 
