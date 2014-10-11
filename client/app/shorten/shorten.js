@@ -2,12 +2,15 @@ angular.module('shortly.shorten', [])
 
 .controller('ShortenController', function ($scope, $location, Links, PostLink) {
   $scope.link = {};
-  $scope.addLink = function(){
+  $scope.addLink = function(isValid){
     var url = $scope.link.newLink;
     // console.log(url, "this should be our URL")
-    if(url !== ''){//see if this is null if doesnt work
+    if(isValid){//see if this is null if doesnt work
       PostLink.addLinkFactory(url);
+    }else{
+      alert('Please check your form!');
     }
+
   };
 })
 

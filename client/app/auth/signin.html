@@ -1,9 +1,12 @@
 <div id='signin'>
   <h1>signin</h1>
-  <form name="signinForm" ng-submit='signin()'>
-    <input type='text'ng-model='user.username'>
-    <input type="password" ng-model='user.password'>
+  <form novalidate name="signinForm" ng-submit='signin(signinForm.$valid)'>
+    <input type='text' name = 'username' ng-model='user.username' required>
+    <p ng-show="signinForm.username.$invalid && !signinForm.username.$pristine" class="help-block">Enter your name.</p>
+    <input type="password" name='password' ng-model='user.password' required ng-minlength='8' ng-maxlength='16'>
+    <p ng-show="signinForm.password.$invalid && !signinForm.password.$pristine" class="help-block">Password has to between 8-16 letters.</p>
     <button>signin</button>
+    <pre>{{user}}</pre>
   </form>
   <a href="#/signup">Don't have an account? <strong>Signup</strong> ...</a>
 </div>

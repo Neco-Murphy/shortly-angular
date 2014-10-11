@@ -2,8 +2,10 @@
 <!-- Your code here -->
 <h1>Shorten your links</h1>
 <!-- not sure how to clear the input... ng-click="link.newLink = ''"-->
-<form novalidate name="shortenForm" ng-submit='addLink()' >
-  <input type='text' name='newLink' ng-model='link.newLink'>
+<form novalidate name="shortenForm" ng-submit='addLink(shortenForm.$valid)' >
+  <input type='url' name='newLink' ng-model='link.newLink'  required>
+  <p ng-show="shortenForm.newLink.$invalid && !shortenForm.newLink.$pristine" class="help-block">Enter valid link.</p>
+    </div>
   <button>Shorten Url!</button>
 </form>
 
