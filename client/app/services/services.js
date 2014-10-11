@@ -1,8 +1,8 @@
 angular.module('shortly.services', [])
 
-.factory('Links', function ($http) {
-  // Your code here
-})
+// .factory('Links', function ($http) {
+
+// })
 .factory('Auth', function ($http, $location, $window) {
   // Don't touch this Auth service!!!
   // it is responsible for authenticating our user
