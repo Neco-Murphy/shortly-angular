@@ -5,7 +5,6 @@ angular.module('shortly.links', [])
   $scope.getLinks = function(){
     Links.getLinksFactory().then(function(data){
       $scope.data.links = data;
-      console.log('Scope from- getLinks:', $scope.data.links)
     });
   };
   $scope.getLinks();//calling getLinks on instantiation

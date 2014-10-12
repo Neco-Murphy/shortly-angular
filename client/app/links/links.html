@@ -2,12 +2,12 @@
   <!-- Your html here -->
   <h1>All Links</h1>
   <input type='text' ng-model='search'>
-  <table>
+  <table class='link'>
     <tr ng-repeat="link in data.links | filter:search | orderBy:'-visits'">
-      <td><a ng-click="goToLink(link.code)">{{link.code}}</a></td>
-      <!-- HERE!!!!!!!!! NEED TO FIGURE OUT FUNCTION SO WHEN WE CLICK ON CODE, REDIRECTS US TO THE CORRECT URL -->
-      <td>{{link.url}}</td>
-      <td>{{link.visits}}</td>
+      <td><a class="info" ng-click="goToLink(link.code)">{{link.code}}</a></td>
+      <td class='title'>{{link.title}}</td>
+      <td class='original'>{{link.url}}</td>
+      <td class='visits'><span class='count'>{{link.visits}}</span>visits</td>
     </tr> <!-- syntax is item in collection, data.links is the array in our controller -->
 
   </table>

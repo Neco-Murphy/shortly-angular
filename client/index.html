@@ -7,10 +7,14 @@
   </head>
   <body>
     <h1>Shortly</h1>
-    <a href="#/signin">Signin</a>
-    <a href="#/signup">Signup</a>
-    <a href="#/links">Links</a>
-    <a href="#/shorten">Shorten</a>
+    <div class='navigation'>
+      <ul>
+        <li><a href="#/signin">Signin</a></li>
+        <li><a href="#/signup">Signup</a></li>
+        <li><a href="#/links">Links</a></li>
+        <li><a href="#/shorten">Shorten</a></li>
+      </ul>
+    </div>
     <!-- the ng-view directive is where our templates will be loaded into when naviagted to -->
     <div ng-controller='LinksController'></div>
 
